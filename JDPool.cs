@@ -58,6 +58,6 @@ public class JDPool<T>
     public sealed int FreeItemCount()
     {
 		return _freeItems.Count;
-	}
+    }
 
 }
