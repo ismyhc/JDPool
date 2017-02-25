@@ -1,0 +1,2 @@
+# JDPool
+Simple object pooling
