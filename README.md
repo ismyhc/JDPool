@@ -2,7 +2,7 @@
 Simple object pooling for use with Unity/Futile 2D Framework.
 
 ### Interface
-The class in which you want to pool should adhere to the JDIPoolable interface. 
+The class in which you want to pool should adhere to the IJDPoolable interface. 
 You should reset any variables in Free()
 ```c#
 void Free();
