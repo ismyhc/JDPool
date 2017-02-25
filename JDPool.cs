@@ -18,39 +18,45 @@ public class JDPool<T>
         _createItemAction = createItemAction;
     }
 
-	public sealed void FreeItem(T item)
-	{
+    public sealed void FreeItem(T item)
+    {
         
         var poolableItem = item as IJDPoolable;
 
         if (poolableItem != null)
             poolableItem.Free();
-        
-		_freeItems.Enqueue(item);
 
-	}
+        _freeItems.Enqueue(item);
+
+    }
 
     public sealed void Clear()
     {
+
         _items.Clear();
         _freeItems.Clear();
+    
     }
 
-	public sealed T GetItem()
-	{
-		if (_freeItems.Count == 0)
-		{
-			T item = _createItemAction();
-			_items.Add(item);
+    public sealed T GetItem()
+    {
 
-			return item;
-		}
+        if (_freeItems.Count == 0)
+        {
 
-		return _freeItems.Dequeue();
-	}
+            T item = _createItemAction();
+            _items.Add(item);
+
+            return item;
+        
+        }
+
+        return _freeItems.Dequeue();
+    
+    }
 
     public sealed int FreeItemCount()
-	{
+    {
 		return _freeItems.Count;
 	}
 
