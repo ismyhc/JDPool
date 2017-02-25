@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public interface IJDPoolable
 {
-    void Free();
+    void OnItemFree();
 }
 
 public class JDPool<T>

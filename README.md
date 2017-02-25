@@ -5,9 +5,9 @@ Simple object pooling for use with Unity/Futile 2D Framework.
 
 ### Interface
 The class in which you want to pool should adhere to the IJDPoolable interface. 
-You should reset any variables in Free()
+You should reset any variables in OnItemFree()
 ```c#
-void Free();
+void OnItemFree();
 ```
 
 ### Initialize
