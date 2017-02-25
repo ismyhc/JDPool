@@ -13,10 +13,10 @@ public class JDPool<T>
     readonly Queue<T> _freeItems = new Queue<T>();
     readonly Func<T> _createItemAction;
 
-	public JDPool(Func<T> createItemAction)
-	{
-		_createItemAction = createItemAction;
-	}
+    public JDPool(Func<T> createItemAction)
+    {
+        _createItemAction = createItemAction;
+    }
 
 	public sealed void FreeItem(T item)
 	{
