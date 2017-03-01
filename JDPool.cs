@@ -24,7 +24,7 @@ public class JDPool<T>
         var poolableItem = item as IJDPoolable;
 
         if (poolableItem != null)
-            poolableItem.Free();
+            poolableItem.OnItemFree();
 
         _freeItems.Enqueue(item);
 
